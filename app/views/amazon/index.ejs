@@ -1,0 +1,27 @@
+<html>
+<head>
+<% include ../partials/head %>
+</head>
+<body>
+<% include ../partials/header %>
+<div class="main">
+    <% include ../partials/left-menu %>
+    <div class="container">
+        <div class="header-story"><h2>Amazon Get Products</h2></div>
+        <div class="body">
+            <form action="/amazon/getproducts" method="POST">
+                <div class="form">
+                    <div class="form-group">
+                        <label>Link</label>
+                        <input type="text" name="link">
+                    </div>
+                </div>
+                <div class="form-submit">
+                    <input type="submit" value="Get Products" class="bt-md">
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,75 @@
+<html>
+<head>
+<% include ../partials/head %>
+<script>
+    function change_button(b){
+        var bt = "/button/"+b.value+".png";
+        document.getElementById("bt-preview").src = bt;
+    }
+</script>
+</head>
+<body>
+<% include ../partials/header %>
+<div class="main">
+    <% include ../partials/left-menu %>
+    <div class="container">
+        <div class="header-story"><h2>Generate Template</h2></div>
+        <div class="body">
+            <form action="" method="POST">
+                <div class="form">
+                    <div class="form-group">
+                        <label>Template Name</label>
+                        <input type="text" name="name" value="<%= (locals.template)?template.name:'' %>" required>
+                        <input type="hidden" name="codename" value="<%= (locals.template)?template.codename:'' %>">
+                    </div>
+                    <div class="form-group">
+                        <label>Template Hrader</label>
+                        <input type="text" name="header" value="<%= (locals.template)?template.header:'' %>" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Template Code</label>
+                        <textarea rows="15" name="template" required><%= (locals.template)?template.template:'' %></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label>Button</label>
+                        <select name="button" onchange="change_button(this)">
+                            <% if(locals.template){ %>
+                                <% for(var i=0;i<6;i++){ %>
+                                    <option value="button_<%= i %>" <%= (template.button == 'button_'+i)?'selected':'' %>>botton_<%= i %></option>
+                                <% } %>
+                            <% }else{ %>
+                                <% for(var i=0;i<6;i++){ %>
+                                    <option value="button_<%= i %>">botton_<%= i %></option>
+                                <% } %>
+                            <% } %>
+                        <select>
+                    </div>
+                    <div class="form-group">
+                        <label>Priview Button</label>
+                        <center><img src="<%= (locals.template)?'/button/'+template.button+'.png' :'/button/button_1.png' %>" width="200" id="bt-preview"/><center>
+                    </div>
+                    <div class="form-group">
+                        <label>Test Main-Keyword</label>
+                        <input type="text" name="mainkeyword">
+                    </div>
+                    <div class="form-group">
+                        <label>Test Sub-Keyword</label>
+                        <input type="text" name="subkeyword">
+                    </div>
+                    <div class="form-group">
+                        <label>Test HopLink</label>
+                        <input type="text" name="hoplink">
+                    </div>
+                </div>
+                <div class="form-submit" style="float:left">
+                    <button type="submit" class="bt-md" formaction="./preview" formtarget="_blank">Preview</button>
+                </div>
+                <div class="form-submit" style="float:right">
+                    <button type="submit" class="bt-md" formaction="<%- submit %>">Save</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+</body>
+</html>

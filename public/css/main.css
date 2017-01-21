@@ -1,0 +1,146 @@
+body{
+    margin: 0px;
+    background-color: #B9D8FF;
+    font-family: 'Segoe UI', Tahoma, sans-serif;
+}
+.header{
+    height: 50px;
+    margin-bottom: 20px;
+    border-bottom: 3px solid #8BC34A;
+    background-color: #2196F3;
+}
+.left-menu{
+    width: 20%;
+    float: left;
+    clear: both;
+    border-radius: 5px;
+    background-color: #FFFFFF;
+}
+.left-menu>ul{
+    padding: 5px 10px;
+}
+.left-menu>ul>li{
+    list-style: none;
+    padding: 5px 20px;
+}
+.left-menu>ul>li:not(.last-li){
+    border-bottom: 1px solid #D7E9FF;
+}
+.container{
+    float: left;
+    margin-left: 20px;
+    width: 75%;
+}
+.header-story{
+    padding: 20px;
+    border-radius: 5px 5px 0 0;
+    background-color: #2196F3;
+}
+.header-story>h2{
+    margin-top: 0px;
+    margin-bottom: 0px;
+    color: #FFFFFF;
+}
+.body{
+    padding: 20px;
+    border-radius: 0 0 5px 5px;
+    background-color: #FFFFFF;
+}
+.form{
+    padding-bottom: 5px;
+    border-bottom: 1px solid #D7E9FF;
+}
+.form-submit{
+    margin-top: 15px;
+}
+.form-group{
+    margin-bottom: 5px;
+}
+.form-group>label{
+    border-radius: 5px;
+    padding: 3px 5px;
+    padding-left: 20px;
+    margin-bottom: 3px;
+    color: #FFFFFF;
+    background-color: #294F6D;
+    display: block;
+}
+form{
+    margin: 0;
+}
+
+.items,
+form:after{
+    content: "";
+    display: table;
+    clear: both;
+}
+table{
+    border-collapse: collapse;
+}
+textarea,select,input[type="text"],input[type="number"]{
+    width: 100%;
+}
+a{
+    color: inherit;
+    text-decoration: none;
+}
+input[type=text],
+input[type="number"],
+select{
+    padding: 5px;
+}
+input[type=text],
+input[type="number"],
+textarea,
+select{
+    border-radius: 5px;
+    border: 1px solid #CCCCCC;
+}
+.template-list{
+    width: 100%
+}
+.template-list>tbody>tr{
+    height: 40px;
+    border-bottom: 1px solid #D7E9FF;
+}
+.template-list * td>button{
+    font-weight: 700;
+    width: 50px;
+    padding: 5px;
+    border: 0px;
+    border-radius: 3px;
+    color: #FFFFFF;
+    background-color: #294F6D;
+}
+td.template-name{
+    padding: 5px 0px 5px 10px;
+    width: 80%
+}
+.bt-md{
+    font-weight: 900;
+    width: auto;
+    padding: 5px;
+    border: 0px;
+    border-radius: 3px;
+    color: #FFFFFF;
+    background-color: #294F6D;
+}
+.main{
+    padding-left: 10%;
+    padding-right: 10%;
+}
+.items>li{
+    line-height: 24px;
+    height: 20px;
+    font-size: 13px;
+    float: left;
+    width: 30%;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    list-style-type: none
+}
+.items{
+    width: 100%;
+}

@@ -1,0 +1,27 @@
+<html>
+<head>
+<% include ../partials/head %>
+</head>
+<body>
+<% include ../partials/header %>
+<div class="main">
+    <% include ../partials/left-menu %>
+    <div class="container">
+        <div class="header-story"><h2><%= (locals.keyword)?"Search for \""+keyword+"\"":'' %></h2></div>
+        <div class="body">
+            <form action="./keyword-tool/search" method="POST">
+                <div class="form">
+                    <div class="form-group">
+                        <label>Keyword (1 keyword / 1 line) <%= (locals.count)?"Total : "+count:'' %></label>
+                        <textarea rows="30" name="keywords" ><% if(locals.keywords){for(var i=0; i < keywords.length ; i++){ %><%= keywords[i]+'\n' %><% }} %></textarea>
+                    </div>
+                </div>
+                <div class="form-submit">
+                    <button type="submit" class="bt-md">Google Analytics</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+</body>
+</html>

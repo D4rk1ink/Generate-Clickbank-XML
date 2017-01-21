@@ -1,0 +1,33 @@
+<html>
+<head>
+<% include ../partials/head %>
+</head>
+<body>
+<% include ../partials/header %>
+<div class="main">
+    <% include ../partials/left-menu %>
+    <div class="container">
+        <div class="header-story"><h2>ALL CATEGORIES</h2></div>
+        <div class="body">
+            <form action="./aliexpress/generate" method="POST">
+                <div class="form">
+                    <% for(var i=0; i < data.length ; i++){ %>
+                        <div class="form-group">
+                            <label><%= data[i].categoryName %></label>
+                            <ul class="items">
+                                <% for(var x=0; x < data[i].items.length ; x++){ %>
+                                    <li><input type="checkbox" name="items[<%= data[i].categoryName %>][<%= data[i].items[x].name %>]" value="<%= data[i].items[x].itemId %>"><%= data[i].items[x].name %></li>
+                                <% } %>
+                            </ul>
+                        </div>
+                    <% } %>
+                </div>
+                <div class="form-submit">
+                    <input type="submit" value="Generate" class="bt-md">
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+</body>
+</html>

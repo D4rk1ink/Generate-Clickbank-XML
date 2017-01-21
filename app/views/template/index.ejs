@@ -1,0 +1,42 @@
+<html>
+<head>
+<% include ../partials/head.ejs %>
+<script>
+function del(el){
+    var r = confirm("You do want delete");
+    if(r){
+        return true;
+    }else{
+        false;
+    }
+}
+</script>
+</head>
+<body>
+<% include ../partials/header %>
+<div class="main">
+    <% include ../partials/left-menu %>
+    <div class="container">
+        <div class="header-story"><h2>Template Management</h2></div>
+        <div class="body">
+            <table class="template-list">
+                <% for(var i=0; i < template.length ; i++){ %>
+                    <tr>
+                        <form action="" method="POST" target="_blank">
+                            <input type="hidden" name="codename" value="<%= template[i].codename %>">
+                            <td class="template-name"><%= template[i].name %></td>
+                            <td><button type="submit" formaction="./template/view">View</button></td>
+                            <td><button type="submit" formaction="./template/edit">Edit</button></td>
+                            <td><button type="submit" onclick="del()" formaction="./template/delete" formtarget="">Delete</button></td>
+                        </form>
+                    </tr>
+                <% } %>
+            </table>
+            <div class="form-submit">
+                <a href="./template/create"><button class="bt-md">New Template</button></a>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

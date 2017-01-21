@@ -1,0 +1,51 @@
+<html>
+<head>
+<% include ../partials/head %>
+</head>
+<body>
+<% include ../partials/header %>
+<div class="main">
+    <% include ../partials/left-menu %>
+    <div class="container">
+        <div class="header-story"><h2>Generate Page</h2></div>
+        <div class="body">
+            <form action="" method="POST">
+                <div class="form">
+                    <div class="form-group">
+                        <label>Main-Keyword</label>
+                        <input type="text" name="mainkeyword">
+                    </div>
+                    <div class="form-group">
+                        <label>Sub-Keyword (1 keyword / 1 line)</label>
+                        <textarea rows="15" name="subkeywords"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label>Hoplink</label>
+                        <input type="text" name="hoplink">
+                    </div>
+                    <div class="form-group">
+                        <label>Time Start</label>
+                        <input type="number" name="min">
+                    </div>
+                    <div class="form-group">
+                        <label>Time End</label>
+                        <input type="number" name="max">
+                    </div>
+                    <div class="form-group">
+                        <label>Template</label>
+                        <select name="codename">
+                            <% for(var i=0; i < template.length ; i++){ %>
+                                <option value="<%= template[i].codename %>"><%= template[i].name %></option>
+                            <% } %>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-submit">
+                    <input type="submit" value="Generate" class="bt-md">
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<html>
+<head>
+<% include ../partials/head %>
+</head>
+<body>
+<% include ../partials/header %>
+<div class="main">
+    <% include ../partials/left-menu %>
+    <div class="container">
+        <div class="header-story"><h2>Keyword Tool</h2></div>
+        <div class="body">
+            <form action="./keyword-tool/search" method="POST">
+                <div class="form">
+                    <div class="form-group">
+                        <label>keyword</label>
+                        <input type="text" name="keyword" required>
+                    </div>
+                </div>
+                <div class="form-submit">
+                    <button type="submit" class="bt-md">Search</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+</body>
+</html>
